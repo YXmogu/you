@@ -1,0 +1,34 @@
+/*
+ * 将一个文件的数据存到数组中
+ * 再存到另一个文件
+ */
+#include<stdio.h>
+
+int main()                                                            // 主函数
+{
+    char file[20];                                                   // 定义储存数据的数组
+    int i = 0, j, k = 0;                                              // 定义循环变量
+    
+    FILE *fp1 = fopen("1.txt", "r");                      //定义文件指针 fp1
+    while(fscanf(fp1, "%c", &file[i]) != EOF)       // 读取文件 1.txt中的
+    {                                                                       // 数据到数组中
+        i++;                                                              // 变量自增
+    }
+    fclose(fp1);                                                     // 关闭指针 fp1
+    file[i] = '\0';                                                     //数据最后加上 '\0'
+    
+    for(j = 0; j < i; j++)                                          // 将数组中的数据输出到屏幕
+    {
+        printf("%c", file[j]);
+    }
+     
+    FILE *fp2 = fopen("2.txt", "w");                    //定义文件指针 fp2
+    while(file[k] != '\0')                                        //写入数据到 2.txt
+    {
+        fprintf(fp2, "%c", file[k]);
+        k++;
+    }
+    fclose(fp2);                                                     //关闭指针 fp2
+    
+    return 0;
+}
