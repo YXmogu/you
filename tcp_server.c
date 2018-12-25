@@ -145,7 +145,7 @@ int main(void)
 	while(1)
 	{
 		printf(">_:");
-		scanf("%s", &data);
+		scanf("%s", data);
 
 		//ret = write(cli_fd, (void *)stu_data, sizeof(stu_data));	
 		ret = send(cli_fd, (void *)&data, sizeof(data), 0);
