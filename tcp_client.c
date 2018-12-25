@@ -101,7 +101,7 @@ int main()
 	while(1)
 	{
 		printf(">_:");
-		scanf("%s", &data);
+		scanf("%s", data);
 		/* 发送数据 */
 		ret = send(sock_fd, (void *)&data, sizeof(data), 0);
 		if(ret == -1)
