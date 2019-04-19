@@ -19,7 +19,7 @@
 #include <sys/socket.h>
 #include "print_err.h"
 
-#define SIP "172.25.143.46"
+#define SIP "127.0.0.1"
 #define SPORT 8989
 
 int sock_fd = -1;
