@@ -21,7 +21,7 @@
 #include <signal.h>		//信号量 SIGINT
 
 #define SPORT 8989		// 端口
-#define SIP "39.108.103.169"	// ip
+#define SIP "127.0.0.1"	// ip
 
 int cli_fd = -1;		//存放与连接客户端通信的描述符
 
